@@ -1,7 +1,7 @@
 %include	/usr/lib/rpm/macros.python
 %define		zope_subname	iHotfix
 Summary:	It dynamically applies several patches to Zope
-Summary(pl):	Dodatek do Zope aplikuj±cy wiele poprawek dla Zope
+Summary(pl):	Dodatek aplikuj±cy wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
 Version:	0.2.0
 Release:	1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 It dynamically applies several patches to Zope
 
 %description -l pl
-Dodatek do Zope aplikuj±cy wiele poprawek dla Zope
+Dodatek aplikuj±cy wiele poprawek dla Zope
 
 %prep
 %setup -q -n %{zope_subname}
