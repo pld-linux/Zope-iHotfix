@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.python
 %define		zope_subname	iHotfix
-Summary:	It dynamically applies several patches to Zope
+Summary:	Dynamically applying several patches to Zope
 Summary(pl):	Dodatek aplikuj±cy wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
 Version:	0.2.0
@@ -9,19 +9,19 @@ License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/lleu/%{zope_subname}-%{version}.tgz
 # Source0-md5:	e1e20772e6b0c1e58a3627a213fba46d
-URL:		http://sourceforge.net/projects/lleu
+URL:		http://sourceforge.net/projects/lleu/
 BuildRequires:	python >= 2.2
+Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
 Requires:	Zope >= 2.6
-Requires(post,postun):	/usr/sbin/installzopeproduct
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-It dynamically applies several patches to Zope
+It dynamically applies several patches to Zope.
 
 %description -l pl
-Dodatek aplikuj±cy wiele poprawek dla Zope
+Dodatek aplikuj±cy wiele poprawek dla Zope.
 
 %prep
 %setup -q -n %{zope_subname}
