@@ -4,7 +4,7 @@ Summary:	Dynamically applying several patches to Zope
 Summary(pl):	Dodatek aplikuj±cy wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
 Version:	0.4.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/lleu/%{zope_subname}-%{version}.tgz
