@@ -3,12 +3,12 @@
 Summary:	Dynamically applying several patches to Zope
 Summary(pl):	Dodatek aplikuj±cy wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
-Version:	0.5.0
-Release:	2
+Version:	0.5.1
+Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://dl.sourceforge.net/lleu/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	d6d7f44965e4643de3a6f46fab24b3c9
+Source0:	http://www.ikaaro.org/download/%{zope_subname}-%{version}.tar.gz
+# Source0-md5:	e0579873f9986eff3f0f4e6b678f2713
 URL:		http://www.ikaaro.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope >= 2.6
@@ -31,7 +31,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 # should tests be included or not?
-cp -af *.py $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -af *.py version.txt $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/%{name}
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/%{name}
@@ -57,5 +57,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc TODO.txt README.txt
+%doc TODO.txt README.txt Changelog
 %{_datadir}/%{name}
