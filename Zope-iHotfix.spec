@@ -13,7 +13,7 @@ URL:		http://www.ikaaro.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope >= 2.6
 Requires:	python-itools >= 0.5.0
-BuildRequires:  python
+BuildRequires:	python
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
