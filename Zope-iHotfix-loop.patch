@@ -1,0 +1,51 @@
+diff -urN oryg/__init__.py zmien/__init__.py
+--- oryg/__init__.py	2004-02-27 17:03:24.000000000 +0100
++++ zmien/__init__.py	2004-06-03 18:30:38.000000000 +0200
+@@ -80,23 +80,33 @@
+     contexts[id] = context
+ 
+     # Publish
+-    x = Publish.old_publish(zope_request, module_name, after_list, debug)
+-
+-    # Remove the context object
+     try:
++        x = Publish.old_publish(zope_request, module_name, after_list, debug)
++    except:
+         del contexts[id]
+-    except KeyError:
+-        # Some people has reported that sometimes a KeyError exception is
+-        # raised in the previous line, I haven't been able to reproduce it.
+-        # This try/except clause seems to work. I'd prefer to understand
+-        # what is happening.
+-        LOG('iHotfix', PROBLEM,
+-            "The thread number %s don't has a context object associated." % id)
+-
+-    return x
+-
++        raise
++    else:
++        # Remove the context object
++        try:
++            del contexts[id]
++        except KeyError:
++            # Some people has reported that sometimes a KeyError exception is
++            # raised in the previous line, I haven't been able to reproduce it.
++            # This try/except clause seems to work. I'd prefer to understand
++            # what is happening.
++            LOG('iHotfix', PROBLEM,
++                "The thread %s doesn't have a context object associated." % id)
++
++        return x
++
++
++if patch is False:
++    # Intercept I18NLayer (XXX it should depend on iHotfix, contact its
++    # authors).
++    if hasattr(Publish, 'old_publish'):
++        Publish.publish = Publish.old_publish
++        del Publish.old_publish
+ 
+-if not patch:
+     # XXX What happens when Localizer 1.0 and iHotfix are installed??
+     # Apply the patch
+     Publish.old_publish = Publish.publish
