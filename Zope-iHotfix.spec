@@ -9,7 +9,7 @@ License:	GPL
 Group:		Development/Tools
 Source0:	http://dl.sourceforge.net/lleu/%{zope_subname}-%{version}.tar.gz
 # Source0-md5:	d6d7f44965e4643de3a6f46fab24b3c9
-URL:		http://sourceforge.net/projects/lleu/
+URL:		http://www.ikaaro.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope >= 2.6
 Requires:	python-itools >= 0.5.0
