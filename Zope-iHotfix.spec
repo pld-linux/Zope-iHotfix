@@ -3,16 +3,16 @@
 Summary:	Dynamically applying several patches to Zope
 Summary(pl):	Dodatek aplikuj±cy wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
-Version:	0.5.2
+Version:	0.6.0
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.ikaaro.org/download/ihotfix/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	6b2aede7586ab2f7c324d9f7c66dec76
+# Source0-md5:	7c25676bcc2b24d595a5e74dd08bf03c
 URL:		http://www.ikaaro.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope >= 2.6
-Requires:	python-itools >= 0.5.0
+Requires:	python-itools >= 0.9.0
 BuildRequires:	python
 %pyrequires_eq	python-modules
 BuildArch:	noarch
@@ -58,5 +58,5 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc TODO.txt README.txt Changelog
+%doc CHANGES.txt README.txt Changelog
 %{_datadir}/%{name}
