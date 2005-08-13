@@ -3,12 +3,12 @@
 Summary:	Dynamically applying several patches to Zope
 Summary(pl):	Dodatek aplikuj±cy wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
-Version:	0.6.0
+Version:	0.7.0
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://www.ikaaro.org/download/ihotfix/%{zope_subname}-%{version}.tar.gz
-# Source0-md5:	7c25676bcc2b24d595a5e74dd08bf03c
+# Source0-md5:	07a438b14e550e6e37271f34e098bbd6
 URL:		http://www.ikaaro.org/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope >= 2.6
