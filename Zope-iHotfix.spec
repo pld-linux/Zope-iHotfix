@@ -10,10 +10,11 @@ Group:		Development/Tools
 Source0:	http://www.ikaaro.org/download/ihotfix/%{zope_subname}-%{version}.tar.gz
 # Source0-md5:	07a438b14e550e6e37271f34e098bbd6
 URL:		http://www.ikaaro.org/
+BuildRequires:	python
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(post,postun):	/usr/sbin/installzopeproduct
 Requires:	Zope >= 2.6
 Requires:	python-itools >= 0.9.0
-BuildRequires:	python
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,16 +45,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/sbin/installzopeproduct %{_datadir}/%{name} %{zope_subname}
-if [ -f /var/lock/subsys/zope ]; then
-	/etc/rc.d/init.d/zope restart >&2
-fi
+%service -q zope restart
 
 %postun
 if [ "$1" = "0" ]; then
 	/usr/sbin/installzopeproduct -d %{zope_subname}
-	if [ -f /var/lock/subsys/zope ]; then
-		/etc/rc.d/init.d/zope restart >&2
-	fi
+	%service -q zope restart
 fi
 
 %files
