@@ -7,7 +7,7 @@ Version:	0.7.0
 Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	http://www.ikaaro.org/download/ihotfix/%{zope_subname}-%{version}.tar.gz
+Source0:	http://download.ikaaro.org/ihotfix/%{zope_subname}-%{version}.tar.gz
 # Source0-md5:	07a438b14e550e6e37271f34e098bbd6
 URL:		http://www.ikaaro.org/
 BuildRequires:	python
