@@ -1,7 +1,7 @@
 
 %define		zope_subname	iHotfix
 Summary:	Dynamically applying several patches to Zope
-Summary(pl.UTF-8):   Dodatek aplikujący wiele poprawek dla Zope
+Summary(pl.UTF-8):	Dodatek aplikujący wiele poprawek dla Zope
 Name:		Zope-%{zope_subname}
 Version:	0.7.0
 Release:	1
